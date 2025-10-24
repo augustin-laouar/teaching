@@ -1,7 +1,9 @@
 #include "test_utils.h"
 
-void print_line(const Line *L, size_t index) {
-    if (!L) {
+void print_line(const Line *L, size_t index) 
+{
+    if (!L) 
+    {
         printf("line %zu: [NULL]\n", index);
         return;
     }
@@ -13,8 +15,10 @@ void print_line(const Line *L, size_t index) {
            L->cap);
 }
 
-void print_buffer(const Buffer *B) {
-    if (!B) {
+void print_buffer(const Buffer *B) 
+{
+    if (!B) 
+    {
         printf("[Buffer NULL]\n");
         return;
     }
@@ -22,9 +26,7 @@ void print_buffer(const Buffer *B) {
     printf("=== BUFFER STATE ===\n");
     printf("Lines: %zu / Capacity: %zu\n", B->count, B->cap);
 
-    for (size_t i = 0; i < B->count; ++i) {
-        print_line(&B->lines[i], i);
-    }
+    for (size_t i = 0; i < B->count; ++i) print_line(&B->lines[i], i);
 
     printf("====================\n");
 }
